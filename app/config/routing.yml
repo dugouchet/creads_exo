@@ -19,9 +19,6 @@ fos_user_security:
 fos_user_profile:
     resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
     prefix: /profile
-smartask_activity_homepage:
-    path:     /activite
-    defaults: { _controller: SMARTASKHomeBundle:Default:activity }
 fos_user_register:
     resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
     prefix: /register
