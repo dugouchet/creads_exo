@@ -48,4 +48,9 @@ class User extends BaseUser
     	$this->likedArticles = $likedArticles;
     	return $this;
     }
+    public function addArticle(Article $article)
+    {
+    	// Ici, on utilise l'ArrayCollection vraiment comme un tableau
+    	$this->likedArticles[] = $article;
+    }
 }

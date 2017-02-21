@@ -6,4 +6,4 @@ ca_forum_articles:
     defaults: { _controller: CAForumBundle:Default:articles }  
 like_or_dislike:
     path:     /articles
-    defaults: { _controller: CAForumBundle:Default:likearticle }    
+    defaults: { _controller: CAForumBundle:Default:likeArticle }    

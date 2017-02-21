@@ -15,11 +15,8 @@ class DefaultController extends Controller
 	}
 	public function articlesAction(Request $request)
 	{
-		$article1 = new Article();
-		$article1->setTitre("Creads,la startup qui le vent en poupe !");
-		$article1->setNombreLike(42);
+
 		$em =$this->getDoctrine()->getManager();
-		$em->persist($article1);
 		$em->flush();
 		$listArticles= $em->getRepository('CAForumBundle:Article')->findAll();
 		

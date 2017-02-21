@@ -25,12 +25,12 @@ class LoadArticleData implements FixtureInterface
 		$userCreads->setUsername('creads');
 		$userCreads->setPassword('creads');
 		$userCreads->setEmail('creads@gmail.com');
-		$userCreads->setLikedArticles($article1);		$userCreads->setLikedArticles($article2);
+		$userCreads->addArticle($article1);
+		$userCreads->addArticle($article2);
 		
 		
 		$manager->persist($userCreads);
 
-		$manager->persist($article1);
 		$manager->flush();
 	}
 }
