@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Creads project</title>
+  <meta charset="utf-8">
+</head>
+<body>
+<form action="{{ path("fos_user_security_check") }}" method="post" id="login-nav">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}"placeholder="Username" required="required" />
+    <input type="password" class="form-control" id="password" name="_password" placeholder="Password" required="required" />
+    <input type="submit" class="btn btn-primary btn-block" id="_submit" name="_submit" value="{{ 'sign in'}}" />
+</form>
+</html>

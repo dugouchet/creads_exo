@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Creads project</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  {% stylesheets 'bundles/caforum/css/articles_page.css' %}
+      <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+  {% endstylesheets %}
+  
+</head>
+<body>
+	<!-- la nav bar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span>
+						{{ app.user.username }}</a></li>
+					<li><a href="{{ path('fos_user_security_logout') }}"><span
+							class="glyphicon glyphicon-user"></span>Logout</a></li>
+					{% else %}
+					<li><a href="{{ path('fos_user_security_login') }}"><span
+							class="glyphicon glyphicon-log-in"></span>Login</a></li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>	
+	</nav>
+<div class="container">
+  <h2>Liste des Articles</h2>          
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Like(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for article in listArticles %}
+      <tr>
+        <td>{{ article.getTitre }}</td>
+        <td>{{ article.getNombreLike }}</td>
+        <td><a href="{{ path('like_or_dislike', {'id': article.id}) }}" class="btn btn-default" role="button">{{ article.getNombreLike }}</a></td>
+      </tr>
+        {% endfor %}     
+    </tbody>
+  </table>
+</div>
+</html>

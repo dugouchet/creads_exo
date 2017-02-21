@@ -1,0 +1,9 @@
+ca_forum_homepage:
+    path:     /
+    defaults: { _controller: CAForumBundle:Default:index }
+ca_forum_articles:
+    path:     /articles
+    defaults: { _controller: CAForumBundle:Default:articles }  
+like_or_dislike:
+    path:     /articles
+    defaults: { _controller: CAForumBundle:Default:likearticle }    
